@@ -132,5 +132,7 @@ func (s Service) Verify(ctx context.Context, hash string, code string) (map[stri
 }
 
 func (s Service) prefix(val string) string {
+	v := s.cfg.GetPrefix()
+	fmt.Println(v)
 	return fmt.Sprintf("%s:%s", s.cfg.GetCharset(), val)
 }
